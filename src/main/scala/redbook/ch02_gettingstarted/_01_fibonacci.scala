@@ -1,8 +1,10 @@
 package redbook.ch02_gettingstarted
 
+import org.scalatest.{FunSuite, Matchers}
+
 import scala.annotation.tailrec
 
-object _01_fibonacci extends App {
+class _01_fibonacci extends FunSuite with Matchers {
 
   def fib(n: Int): Int = {
     @tailrec
@@ -14,8 +16,8 @@ object _01_fibonacci extends App {
     loop(n, 0, 1)
   }
 
-  println("Expected: 0, 1, 1, 2, 3, 5, 8")
-  println(
-    "Actual:   %d, %d, %d, %d, %d, %d, %d"
-      .format(fib(0), fib(1), fib(2), fib(3), fib(4), fib(5), fib(6)))
+  test("test") {
+    List(fib(0), fib(1), fib(2), fib(3), fib(4), fib(5), fib(6)) shouldBe List(
+        0, 1, 1, 2, 3, 5, 8)
+  }
 }
