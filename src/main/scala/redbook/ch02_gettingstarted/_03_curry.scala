@@ -1,8 +1,8 @@
 package redbook.ch02_gettingstarted
 
-import org.scalatest.{FunSuite, Matchers}
+//Currying – decomposition of function with multiple arguments into a chain of single-argument functions.
 
-class _03_curry extends FunSuite with Matchers {
+object _03_curry {
 
   def curry[A, B, C](f: (A, B) => C): A => (B => C) =
     (a: A) => (b: B) => f(a, b)
@@ -11,15 +11,4 @@ class _03_curry extends FunSuite with Matchers {
 
   def f(a: Int, b: Int): Int = a + b
   def g(a: Int)(b: Int): Int = a + b
-
-  test("test1") {
-    curry(f)(1)(1) shouldBe f(1, 1)
-    curry(f)(1)(1) shouldBe g(1)(1)
-  }
-
-  test("test2") {
-    theCurry(f)(1)(1) shouldBe f(1, 1)
-    theCurry(f)(1)(1) shouldBe g(1)(1)
-  }
-
 }

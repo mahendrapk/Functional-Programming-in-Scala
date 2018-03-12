@@ -1,8 +1,8 @@
 package redbook.ch02_gettingstarted
 
-import org.scalatest.{FunSuite, Matchers}
+//UnCurrying – a chain of single-argument functions, are composed into multiple argument function
 
-class _04_uncurry extends FunSuite with Matchers {
+object _04_uncurry {
 
   def uncurry[A, B, C](f: A => B => C): (A, B) => C = (a: A, b: B) => f(a)(b)
 
