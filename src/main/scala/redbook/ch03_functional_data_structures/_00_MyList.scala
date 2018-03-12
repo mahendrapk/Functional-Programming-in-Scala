@@ -18,6 +18,11 @@ object MyList {
     case Cons(x, xs)  ⇒ x * product(xs)
   }
 
+  def tail(ints: MyList[Int]): MyList[Int] = ints match {
+    case Nil         ⇒ Nil
+    case Cons(x, xs) ⇒ xs
+  }
+
   def apply[A](as: A*): MyList[A] =
     if (as.isEmpty) Nil else Cons(as.head, apply(as.tail: _*))
 }
