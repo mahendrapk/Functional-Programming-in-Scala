@@ -2,6 +2,13 @@ package redbook.ch02_gettingstarted
 
 import scala.annotation.tailrec
 
+/*
+  Exercise 2.2 description:
+
+  Implement isSorted, which checks whether an Array[A] is sorted according to a
+  given comparison function:
+ */
+
 object _02_sorted {
 
   def isSorted[A](as: Array[A], ordered: (A, A) => Boolean): Boolean = {

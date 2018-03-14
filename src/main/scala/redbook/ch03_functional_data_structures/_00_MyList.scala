@@ -1,9 +1,7 @@
 package redbook.ch03_functional_data_structures
 
 sealed trait MyList[+A]
-
-case object Nil extends MyList[Nothing]
-
+case object Nil                               extends MyList[Nothing]
 case class Cons[+A](head: A, tail: MyList[A]) extends MyList[A]
 
 object MyList {
@@ -16,11 +14,6 @@ object MyList {
     case Nil          ⇒ 1.0
     case Cons(0.0, _) ⇒ 0.0
     case Cons(x, xs)  ⇒ x * product(xs)
-  }
-
-  def tail(ints: MyList[Int]): MyList[Int] = ints match {
-    case Nil         ⇒ Nil
-    case Cons(x, xs) ⇒ xs
   }
 
   def apply[A](as: A*): MyList[A] =
