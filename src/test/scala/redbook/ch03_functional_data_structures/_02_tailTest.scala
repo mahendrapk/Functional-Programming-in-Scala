@@ -10,7 +10,6 @@ class _02_tailTest extends FunSuite with Matchers {
     tail(MyList(1, 2, 3, 4)) shouldEqual MyList(2, 3, 4)
     tail(MyList(1, 2)) shouldEqual MyList(2)
     tail(MyList(1)) shouldEqual Nil
-    tail(Nil) shouldEqual Nil
     tail(tail(tail(tail(MyList(1, 2, 3, 4))))) shouldEqual Nil
   }
 }

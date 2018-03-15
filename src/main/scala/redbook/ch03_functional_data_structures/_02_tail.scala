@@ -9,9 +9,9 @@ package redbook.ch03_functional_data_structures
 
 object _02_tail {
 
-  def tail[T](myList: MyList[T]): MyList[T] = myList match {
-    case Nil         ⇒ Nil
-    case Cons(x, xs) ⇒ xs
+  def tail[T](l: MyList[T]): MyList[T] = l match {
+    case Nil        ⇒ sys.error("tail of empty list")
+    case Cons(_, t) ⇒ t
   }
 
 }
