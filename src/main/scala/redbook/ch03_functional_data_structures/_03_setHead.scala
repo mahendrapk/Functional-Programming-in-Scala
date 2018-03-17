@@ -9,7 +9,7 @@ package redbook.ch03_functional_data_structures
 
 object _03_setHead {
 
-  def setHead[T](l: MyList[T], h: T): MyList[T] = l match {
+  def setHead[A](l: MyList[A], h: A): MyList[A] = l match {
     case Nil        ⇒ Cons(h, Nil)
     case Cons(_, t) ⇒ Cons(h, t)
   }

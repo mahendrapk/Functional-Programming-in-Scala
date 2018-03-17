@@ -12,4 +12,11 @@ class MyListTest extends FunSuite with Matchers {
     MyList.product(MyList(1, 2, 3, 4)) shouldEqual (24.0)
   }
 
+  test("sum with foldRight") {
+    MyList.sum2(MyList(1, 2, 3, 4)) shouldEqual (10)
+  }
+
+  test("product with foldRight") {
+    MyList.product2(MyList(1, 2, 3, 4)) shouldEqual (24.0)
+  }
 }
