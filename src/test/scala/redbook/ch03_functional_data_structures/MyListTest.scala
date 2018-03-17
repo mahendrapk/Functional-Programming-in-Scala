@@ -4,19 +4,21 @@ import org.scalatest.{FunSuite, Matchers}
 
 class MyListTest extends FunSuite with Matchers {
 
+  import redbook.ch03_functional_data_structures.MyList._
+
   test("test list with integers") {
-    MyList.sum(MyList(1, 2, 3, 4)) shouldEqual (10)
+    sum(MyList(1, 2, 3, 4)) shouldEqual (10)
   }
 
   test("test list with doubles") {
-    MyList.product(MyList(1, 2, 3, 4)) shouldEqual (24.0)
+    product(MyList(1, 2, 3, 4)) shouldEqual (24.0)
   }
 
   test("sum with foldRight") {
-    MyList.sum2(MyList(1, 2, 3, 4)) shouldEqual (10)
+    sum2(MyList(1, 2, 3, 4)) shouldEqual (10)
   }
 
   test("product with foldRight") {
-    MyList.product2(MyList(1, 2, 3, 4)) shouldEqual (24.0)
+    product2(MyList(1, 2, 3, 4)) shouldEqual (24.0)
   }
 }
