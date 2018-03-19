@@ -7,6 +7,6 @@ class _14_appendTest extends FunSuite with Matchers {
 
   test("append") {
     appendUsingFoldRight(MyList(1, 2, 3, 4), MyList(5, 6, 7, 8)) shouldEqual MyList(1, 2, 3, 4, 5, 6, 7, 8)
-    appendUisngFoldLeft(MyList(1, 2, 3, 4), MyList(5, 6, 7, 8)) shouldEqual MyList(1, 2, 3, 4, 5, 6, 7, 8)
+    appendUsingFoldLeft(MyList(1, 2, 3, 4), MyList(5, 6, 7, 8)) shouldEqual MyList(1, 2, 3, 4, 5, 6, 7, 8)
   }
 }
