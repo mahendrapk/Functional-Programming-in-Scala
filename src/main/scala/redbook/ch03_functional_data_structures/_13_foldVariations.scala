@@ -17,6 +17,7 @@ object _13_foldVariations {
   //slight cheating, use reverse and foldLeft
   def foldRightViaFoldLeft[A, B](l: MyList[A], z: B)(f: (A, B) ⇒ B): B = foldLeft(reverse(l), z)((b, a) ⇒ f(a, b))
 
+  //slightly refactored version to understand the flow. identity and foldOf can be anonymous functions.
   def foldRightViaFoldLeft2[A, B](l: MyList[A], z: B)(f: (A, B) => B): B = {
     def identity              = (b: B) ⇒ b
     def foldOf(a: A, b: B): B = f(a, b)
