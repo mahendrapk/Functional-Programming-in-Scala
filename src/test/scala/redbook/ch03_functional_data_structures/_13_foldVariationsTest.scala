@@ -17,6 +17,6 @@ class _13_foldVariationsTest extends FunSuite with Matchers {
 
   test("foldLeftViaFoldRight") {
     foldLeftViaFoldRight(MyList(1, 2, 3, 4), 0)(_ + _) shouldEqual 10
-    foldLeftViaFoldRight(MyList(1, 2, 3, 4), "")((h, s) ⇒ s.concat(h.toString)) shouldEqual "1234"
+    foldLeftViaFoldRight(MyList(1, 2, 3, 4), "")((s, h) ⇒ s.concat(h.toString)) shouldEqual "1234"
   }
 }

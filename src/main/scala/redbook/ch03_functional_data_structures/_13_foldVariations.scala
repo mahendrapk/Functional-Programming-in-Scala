@@ -24,6 +24,6 @@ object _13_foldVariations {
     foldLeft(l, identity)((id: B ⇒ B, a: A) => b => id(foldOf(a, b)))(z)
   }
 
-  def foldLeftViaFoldRight[A, B](l: MyList[A], z: B)(f: (A, B) ⇒ B): B =
-    foldRight(l, (b: B) ⇒ b)((a, g) ⇒ b ⇒ g(f(a, b)))(z)
+  def foldLeftViaFoldRight[A, B](l: MyList[A], z: B)(f: (B, A) ⇒ B): B =
+    foldRight(l, (b: B) ⇒ b)((a, g) ⇒ b ⇒ g(f(b, a)))(z)
 }
