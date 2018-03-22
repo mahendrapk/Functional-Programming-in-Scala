@@ -18,7 +18,7 @@ object _18_map {
   def map2[A, B](as: MyList[A])(f: A => B): MyList[B] =
     foldRightViaFoldLeft(as, Nil: MyList[B])((h, t) ⇒ Cons(f(h), t))
 
-  def map3[A, B](as: MyList[A])(f: A => B): MyList[B] = {
+  def map[A, B](as: MyList[A])(f: A => B): MyList[B] = {
     val buf = new collection.mutable.ListBuffer[B]
 
     def go(as: MyList[A]): Unit = as match {

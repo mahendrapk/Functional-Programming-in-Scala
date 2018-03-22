@@ -9,6 +9,6 @@ class _18_mapTest extends FunSuite with Matchers {
   test("map to string") {
     map1(MyList(1.0, 2.0, 3.0))(_.toString) shouldEqual (MyList("1.0", "2.0", "3.0"))
     map2(MyList(1.0, 2.0, 3.0))(_.toString) shouldEqual (MyList("1.0", "2.0", "3.0"))
-    map3(MyList(1.0, 2.0, 3.0))(_.toString) shouldEqual (MyList("1.0", "2.0", "3.0"))
+    map(MyList(1.0, 2.0, 3.0))(_.toString) shouldEqual (MyList("1.0", "2.0", "3.0"))
   }
 }
