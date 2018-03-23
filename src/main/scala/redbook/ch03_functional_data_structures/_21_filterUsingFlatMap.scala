@@ -1,7 +1,7 @@
 package redbook.ch03_functional_data_structures
 
 /*
-  Exercise 3.19 description:
+  Exercise 3.21 description:
 
   Use flatMap to implement filter.
  */
