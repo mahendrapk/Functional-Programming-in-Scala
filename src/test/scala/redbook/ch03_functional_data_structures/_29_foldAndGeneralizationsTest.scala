@@ -25,4 +25,16 @@ class _29_foldAndGeneralizationsTest extends FunSuite with Matchers {
     val t2 = Branch(Leaf(100), Branch(Leaf(1), Leaf(2)))
     sizeViaFold(t2) shouldEqual treeSize(t2)
   }
+
+  test("maximumViaFold") {
+    import redbook.ch03_functional_data_structures._26_maximum.maximum
+
+    val t1 = Branch(Branch(Leaf(1), Leaf(2)), Leaf(3))
+    maximumViaFold(t1) shouldEqual maximum(t1)
+
+    maximumViaFold(Leaf(100)) shouldEqual maximum(Leaf(100))
+
+    val t2 = Branch(Leaf(100), Branch(Leaf(100), Leaf(200)))
+    maximumViaFold(t2) shouldEqual maximum(t2)
+  }
 }
