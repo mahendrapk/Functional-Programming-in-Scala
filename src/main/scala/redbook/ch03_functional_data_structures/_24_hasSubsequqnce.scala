@@ -17,19 +17,19 @@ import scala.annotation.tailrec
 object _24_hasSubsequqnce {
 
   @tailrec
-  private def startsWith[A](l1: MyList[A], l2: MyList[A]): Boolean = (l1, l2) match {
+  private def hasFullMatch[A](l1: MyList[A], l2: MyList[A]): Boolean = (l1, l2) match {
     //end of subsequence list
     case (_, Nil) ⇒ true
     //head matched, continue!!
-    case (Cons(h1, t1), Cons(h2, t2)) if h1 == h2 ⇒ startsWith(t1, t2)
+    case (Cons(h1, t1), Cons(h2, t2)) if h1 == h2 ⇒ hasFullMatch(t1, t2)
     //any other case means - no good
     case _ ⇒ false
   }
 
   @tailrec
   def hasSubsequence[A](sup: MyList[A], sub: MyList[A]): Boolean = sup match {
-    case Nil                       ⇒ sub == Nil
-    case _ if startsWith(sup, sub) ⇒ true
-    case Cons(h, t)                ⇒ hasSubsequence(t, sub)
+    case Nil                         ⇒ sub == Nil
+    case _ if hasFullMatch(sup, sub) ⇒ true
+    case Cons(h, t)                  ⇒ hasSubsequence(t, sub)
   }
 }

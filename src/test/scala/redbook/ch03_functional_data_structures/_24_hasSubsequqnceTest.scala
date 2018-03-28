@@ -16,5 +16,4 @@ class _24_hasSubsequqnceTest extends FunSuite with Matchers {
     hasSubsequence(MyList(1, 2, 3, 4), MyList(10, 11)) shouldEqual false
     hasSubsequence(MyList(1, 2, 3, 4), Nil) shouldEqual true
   }
-
 }
