@@ -37,4 +37,16 @@ class _29_foldAndGeneralizationsTest extends FunSuite with Matchers {
     val t2 = Branch(Leaf(100), Branch(Leaf(100), Leaf(200)))
     maximumViaFold(t2) shouldEqual maximum(t2)
   }
+
+  test("depthViaFold") {
+    import redbook.ch03_functional_data_structures._27_depth.depth
+
+    val t1 = Branch(Branch(Leaf(1), Leaf(2)), Leaf(3))
+    depthViaFold(t1) shouldEqual depth(t1)
+
+    depthViaFold(Leaf(100)) shouldEqual depth(Leaf(100))
+
+    val t2 = Branch(Leaf(100), Branch(Leaf(100), Leaf(200)))
+    depthViaFold(t2) shouldEqual depth(t2)
+  }
 }
