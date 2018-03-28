@@ -16,4 +16,5 @@ object _29_foldAndGeneralizations {
   }
 
   def mapViaFold[A, B](t: Tree[A])(f: A ⇒ B): Tree[B] = fold(t)(a ⇒ Leaf(f(a)): Tree[B])(Branch(_, _))
+  def sizeViaFold[A](t: Tree[A]): Int                 = fold(t)(a ⇒ 1)(1 + _ + _)
 }
