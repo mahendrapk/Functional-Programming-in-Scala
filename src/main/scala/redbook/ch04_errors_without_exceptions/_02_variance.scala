@@ -1,6 +1,8 @@
 package redbook.ch04_errors_without_exceptions
 
 /*
+  Exercise 4.2 description:
+
   Implement the variance function in terms of flatMap. If the mean of a sequence is m,
   the variance is the mean of math.pow(x - m, 2) for each element x in the sequence.
   See the definition of variance on Wikipedia (http://mng.bz/0Qsr).
