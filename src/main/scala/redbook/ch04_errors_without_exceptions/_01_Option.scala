@@ -21,6 +21,39 @@ package redbook.ch04_errors_without_exceptions
 
  */
 
-sealed trait Option[+A]
+sealed trait Option[+A] {
+
+  def map[B](f: A ⇒ B): Option[B] = this match {
+    case None    ⇒ None
+    case Some(x) ⇒ Some(f(x))
+  }
+
+  def getOrElse[B >: A](default: ⇒ B): B = this match {
+    case None    ⇒ default
+    case Some(x) ⇒ x
+  }
+
+  //for Some(X) map will produce Some[Some[X]]; then use getOrElse to peel off top Some to get Some[X]
+  def flatMap[B](f: A ⇒ Option[B]): Option[B] = map(f).getOrElse(None)
+
+  //for Some(X) map will produce Some[Some[X]]; then use getOrElse to peel off top Some to get Some[X]
+  def orElse[B >: A](ob: ⇒ Option[B]): Option[B] = this.map(Some(_)).getOrElse(ob)
+
+  //explicit checking with pattern match
+  def orElse1[B >: A](ob: ⇒ Option[B]): Option[B] = this match {
+    case None ⇒ ob
+    case _    ⇒ this
+  }
+
+  //explicit checking with pattern match
+  def filter(f: A ⇒ Boolean): Option[A] = this match {
+    case Some(x) if f(x) ⇒ this
+    case _               ⇒ None
+  }
+
+  def filter1(f: A ⇒ Boolean): Option[A] = flatMap(x ⇒ if (f(x)) this else None)
+
+}
+
 case class Some[+A](get: A) extends Option[A]
 case object None            extends Option[Nothing]
