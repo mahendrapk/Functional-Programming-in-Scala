@@ -7,8 +7,8 @@ class _06_initTest extends FunSuite with Matchers {
 
   test("init") {
 
-    init(MyList(1, 2, 3, 4)) shouldEqual MyList(1, 2, 3)
-    init(MyList(1)) shouldEqual Nil
+    init(List(1, 2, 3, 4)) shouldEqual List(1, 2, 3)
+    init(List(1)) shouldEqual Nil
   }
 
 }

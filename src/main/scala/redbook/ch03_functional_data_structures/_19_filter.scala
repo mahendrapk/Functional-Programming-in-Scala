@@ -9,20 +9,20 @@ package redbook.ch03_functional_data_structures
 
 object _19_filter {
 
-  import redbook.ch03_functional_data_structures.MyList._
+  import redbook.ch03_functional_data_structures.List._
 
-  def filter[A](as: MyList[A])(f: A => Boolean): MyList[A] = {
+  def filter[A](as: List[A])(f: A => Boolean): List[A] = {
     var buffer = new collection.mutable.ListBuffer[A]
 
-    def go(as: MyList[A]): Unit = as match {
+    def go(as: List[A]): Unit = as match {
       case Nil        ⇒ ()
       case Cons(h, t) ⇒ if (f(h)) buffer += h; go(t)
     }
 
     go(as)
-    MyList(buffer.toList: _*)
+    List(buffer.toList: _*)
   }
 
-  def filter1[A](as: MyList[A])(f: A ⇒ Boolean): MyList[A] =
-    foldRight(as, Nil: MyList[A])((h, t) ⇒ if (f(h)) Cons(h, t) else t)
+  def filter1[A](as: List[A])(f: A ⇒ Boolean): List[A] =
+    foldRight(as, Nil: List[A])((h, t) ⇒ if (f(h)) Cons(h, t) else t)
 }

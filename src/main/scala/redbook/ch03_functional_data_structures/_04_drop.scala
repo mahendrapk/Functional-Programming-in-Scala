@@ -9,7 +9,7 @@ package redbook.ch03_functional_data_structures
 
 object _04_drop {
 
-  def drop[T](l: MyList[T], n: Int): MyList[T] = {
+  def drop[T](l: List[T], n: Int): List[T] = {
     if (n <= 0) l
     else {
       l match {

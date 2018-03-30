@@ -8,8 +8,8 @@ package redbook.ch03_functional_data_structures
 
 object _16_addOne {
 
-  import redbook.ch03_functional_data_structures.MyList._
+  import redbook.ch03_functional_data_structures.List._
 
-  def addOne(l: MyList[Int]): MyList[Int] =
-    foldRight(l, Nil: MyList[Int])((i: Int, ls: MyList[Int]) ⇒ Cons(i + 1, ls))
+  def addOne(l: List[Int]): List[Int] =
+    foldRight(l, Nil: List[Int])((i: Int, ls: List[Int]) ⇒ Cons(i + 1, ls))
 }

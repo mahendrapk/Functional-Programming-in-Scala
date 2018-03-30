@@ -9,7 +9,7 @@ package redbook.ch03_functional_data_structures
 
 object _22_listPairAddition {
 
-  def addListPair(l: MyList[Int], r: MyList[Int]): MyList[Int] = (l, r) match {
+  def addListPair(l: List[Int], r: List[Int]): List[Int] = (l, r) match {
     case (Nil, _)                     ⇒ Nil
     case (_, Nil)                     ⇒ Nil
     case (Cons(h1, t1), Cons(h2, t2)) ⇒ Cons(h1 + h2, addListPair(t1, t2))

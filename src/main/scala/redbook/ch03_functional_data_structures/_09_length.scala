@@ -7,7 +7,7 @@ package redbook.ch03_functional_data_structures
 
 object _09_length {
 
-  import redbook.ch03_functional_data_structures.MyList._
+  import redbook.ch03_functional_data_structures.List._
 
-  def length[A](l: MyList[A]): Int = foldRight(l, 0)((_, acc) ⇒ acc + 1)
+  def length[A](l: List[A]): Int = foldRight(l, 0)((_, acc) ⇒ acc + 1)
 }

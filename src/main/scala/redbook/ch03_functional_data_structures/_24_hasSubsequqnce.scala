@@ -17,7 +17,7 @@ import scala.annotation.tailrec
 object _24_hasSubsequqnce {
 
   @tailrec
-  private def hasFullMatch[A](l1: MyList[A], l2: MyList[A]): Boolean = (l1, l2) match {
+  private def hasFullMatch[A](l1: List[A], l2: List[A]): Boolean = (l1, l2) match {
     //end of subsequence list
     case (_, Nil) ⇒ true
     //head matched, continue!!
@@ -27,7 +27,7 @@ object _24_hasSubsequqnce {
   }
 
   @tailrec
-  def hasSubsequence[A](sup: MyList[A], sub: MyList[A]): Boolean = sup match {
+  def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = sup match {
     case Nil                         ⇒ sub == Nil
     case _ if hasFullMatch(sup, sub) ⇒ true
     case Cons(h, t)                  ⇒ hasSubsequence(t, sub)

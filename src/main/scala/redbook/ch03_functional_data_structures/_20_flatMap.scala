@@ -9,13 +9,13 @@ package redbook.ch03_functional_data_structures
  */
 
 object _20_flatMap {
-  import redbook.ch03_functional_data_structures.MyList._
+  import redbook.ch03_functional_data_structures.List._
   import redbook.ch03_functional_data_structures._15_ListOfListsConcat._
   import redbook.ch03_functional_data_structures._18_map._
   import redbook.ch03_functional_data_structures._14_append._
 
-  def flatMap[A, B](as: MyList[A])(f: A => MyList[B]): MyList[B] = concat(map(as)(f))
-  def flatMap2[A, B](as: MyList[A])(f: A => MyList[B]): MyList[B] =
-    foldRight(as, Nil: MyList[B])((h, acc) ⇒ appendUsingFoldLeft(f(h), acc))
+  def flatMap[A, B](as: List[A])(f: A => List[B]): List[B] = concat(map(as)(f))
+  def flatMap2[A, B](as: List[A])(f: A => List[B]): List[B] =
+    foldRight(as, Nil: List[B])((h, acc) ⇒ appendUsingFoldLeft(f(h), acc))
 
 }

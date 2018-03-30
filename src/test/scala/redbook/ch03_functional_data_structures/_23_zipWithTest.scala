@@ -7,7 +7,7 @@ class _23_zipWithTest extends FunSuite with Matchers {
   import redbook.ch03_functional_data_structures._23_zipWith._
 
   test("zipWith") {
-    zipWith(MyList(1, 2, 3, 4), MyList(1, 2, 3, 4))(_ + _) shouldEqual MyList(2, 4, 6, 8)
+    zipWith(List(1, 2, 3, 4), List(1, 2, 3, 4))(_ + _) shouldEqual List(2, 4, 6, 8)
   }
 
 }

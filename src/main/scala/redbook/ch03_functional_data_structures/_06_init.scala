@@ -9,7 +9,7 @@ package redbook.ch03_functional_data_structures
 
 object _06_init {
 
-  def init[A](l: MyList[A]): MyList[A] = l match {
+  def init[A](l: List[A]): List[A] = l match {
     case Nil          ⇒ sys.error("init on empty list")
     case Cons(_, Nil) ⇒ Nil
     case Cons(h, t)   ⇒ Cons(h, init(t))

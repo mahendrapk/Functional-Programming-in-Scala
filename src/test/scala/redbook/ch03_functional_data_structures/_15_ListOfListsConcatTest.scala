@@ -7,8 +7,8 @@ class _15_ListOfListsConcatTest extends FunSuite with Matchers {
 
   test("list of lists concat") {
 
-    val lists = MyList(MyList(1, 2), MyList(3, 4), MyList(5, 6))
+    val lists = List(List(1, 2), List(3, 4), List(5, 6))
 
-    concat(lists) shouldEqual MyList(1, 2, 3, 4, 5, 6)
+    concat(lists) shouldEqual List(1, 2, 3, 4, 5, 6)
   }
 }

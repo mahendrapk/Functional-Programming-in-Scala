@@ -7,10 +7,10 @@ package redbook.ch03_functional_data_structures
   defined.
  */
 
-import redbook.ch03_functional_data_structures.MyList._
+import redbook.ch03_functional_data_structures.List._
 import redbook.ch03_functional_data_structures._14_append._
 
 object _15_ListOfListsConcat {
-  def concat[A](ls: MyList[MyList[A]]): MyList[A] =
-    foldRight(ls, Nil: MyList[A])(appendUsingFoldLeft)
+  def concat[A](ls: List[List[A]]): List[A] =
+    foldRight(ls, Nil: List[A])(appendUsingFoldLeft)
 }

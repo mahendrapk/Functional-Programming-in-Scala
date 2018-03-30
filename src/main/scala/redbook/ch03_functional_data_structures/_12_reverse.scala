@@ -12,6 +12,6 @@ object _12_reverse {
 
   import redbook.ch03_functional_data_structures._10_foldLeft._
 
-  def reverse[T](as: MyList[T]): MyList[T] = foldLeft(as, MyList[T]())((acc, h) ⇒ Cons(h, acc))
+  def reverse[T](as: List[T]): List[T] = foldLeft(as, List[T]())((acc, h) ⇒ Cons(h, acc))
 
 }

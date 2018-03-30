@@ -10,8 +10,8 @@ package redbook.ch03_functional_data_structures
 
 object _08_foldRightAsConstructor {
 
-  import redbook.ch03_functional_data_structures.MyList._
+  import redbook.ch03_functional_data_structures.List._
 
-  def cloneList[A](l: MyList[A]) = foldRight(l, Nil: MyList[A])(Cons(_, _))
+  def cloneList[A](l: List[A]) = foldRight(l, Nil: List[A])(Cons(_, _))
 
 }
