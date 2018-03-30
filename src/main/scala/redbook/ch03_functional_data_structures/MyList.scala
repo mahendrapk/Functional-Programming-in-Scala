@@ -1,7 +1,5 @@
 package redbook.ch03_functional_data_structures
 
-import scala.annotation.tailrec
-
 sealed trait MyList[+A]
 case object Nil                               extends MyList[Nothing]
 case class Cons[+A](head: A, tail: MyList[A]) extends MyList[A]
