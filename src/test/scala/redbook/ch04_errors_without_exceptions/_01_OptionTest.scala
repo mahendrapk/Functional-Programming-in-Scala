@@ -2,7 +2,7 @@ package redbook.ch04_errors_without_exceptions
 
 import org.scalatest.{FunSuite, Matchers}
 
-class OptionTest extends FunSuite with Matchers {
+class _01_OptionTest extends FunSuite with Matchers {
 
   private val intOpt    = Some(100)
   private val stringOpt = Some("abcd")
