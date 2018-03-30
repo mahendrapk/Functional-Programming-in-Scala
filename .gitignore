@@ -27,6 +27,7 @@ shared/.jvm
 *~
 *.orig
 *.sc
+*.log
 
 # eclipse
 .scala_dependencies
