@@ -52,7 +52,11 @@ sealed trait Option[+A] {
   }
 
   def filter1(f: A ⇒ Boolean): Option[A] = flatMap(x ⇒ if (f(x)) this else None)
+}
 
+object Option {
+  //a here, is an argument supplied to a returning function
+  def lift[A, B](f: A ⇒ B): Option[A] ⇒ Option[B] = (a: Option[A]) ⇒ a.map(f)
 }
 
 case class Some[+A](get: A) extends Option[A]

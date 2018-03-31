@@ -43,4 +43,11 @@ class _01_OptionTest extends FunSuite with Matchers {
     noneOpt.map(_.toString) shouldEqual None
   }
 
+  test("lift") {
+    def toS(int: Int): String                = int.toString
+    val lifted: Option[Int] ⇒ Option[String] = Option.lift(toS)
+
+    lifted(Some(100)) shouldEqual Some("100")
+  }
+
 }
