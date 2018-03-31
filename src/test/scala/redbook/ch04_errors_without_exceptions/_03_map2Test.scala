@@ -9,6 +9,6 @@ class _03_map2Test extends FunSuite with Matchers {
   test("test Maps") {
     map2(Some(100), Some(200))(_ + _) shouldEqual Some(300)
     map3(Some(100), Some(200))(_ + _) shouldEqual Some(300)
+    map3(None: Option[Int], Some(200))(_ + _) shouldEqual None
   }
-
 }
