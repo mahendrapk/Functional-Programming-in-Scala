@@ -10,5 +10,6 @@ class _03_map2Test extends FunSuite with Matchers {
     map2(Some(100), Some(200))(_ + _) shouldEqual Some(300)
     map3(Some(100), Some(200))(_ + _) shouldEqual Some(300)
     map3(None: Option[Int], Some(200))(_ + _) shouldEqual None
+    map2(Some(100), Some(List(200, 300, 400)))(_ :: _) shouldEqual Some(List(100, 200, 300, 400))
   }
 }
