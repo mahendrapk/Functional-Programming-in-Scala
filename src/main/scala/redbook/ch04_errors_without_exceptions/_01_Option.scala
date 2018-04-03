@@ -59,5 +59,5 @@ object Option {
   def lift[A, B](f: A ⇒ B): Option[A] ⇒ Option[B] = (a: Option[A]) ⇒ a.map(f)
 }
 
-case class Some[+A](get: A) extends Option[A]
-case object None            extends Option[Nothing]
+final case class Some[+A](get: A) extends Option[A]
+final case object None            extends Option[Nothing]
