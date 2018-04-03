@@ -2,7 +2,7 @@ package redbook.ch04_errors_without_exceptions
 
 import org.scalatest.Matchers
 
-class _08_errorAccumulcatorTest extends org.scalatest.FunSuite with Matchers {
+class _08_errorTrailTest extends org.scalatest.FunSuite with Matchers {
 
   case class Person(name: Name, age: Age)
   sealed case class Name(value: String)
