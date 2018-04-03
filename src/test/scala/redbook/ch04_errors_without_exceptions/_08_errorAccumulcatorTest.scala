@@ -24,6 +24,10 @@ class _08_errorAccumulcatorTest extends org.scalatest.FunSuite with Matchers {
   test("map3 only returns all errors") {
     def mkPerson(name: String, age: Int): Either[List[String], Person] =
       mkName(name).map2AsErrorAccumulator(mkAge(age))((x, y) ⇒ Person(x, y))
+
     mkPerson("", 0) shouldEqual Left(List("Name is empty", "Age out of range"))
+    mkPerson("", 10) shouldEqual Left(List("Name is empty"))
+    mkPerson("HWT", 0) shouldEqual Left(List("Age out of range"))
+    mkPerson("HWT", 119) shouldEqual Right(Person(Name("HWT"), Age(119)))
   }
 }

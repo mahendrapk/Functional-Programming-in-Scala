@@ -53,10 +53,8 @@ sealed trait Either[+E, +A] {
    */
   def map2AsErrorAccumulator[EE >: E, B, C](b: Either[EE, B])(f: (A, B) ⇒ C): Either[List[EE], C] =
     (this, b) match {
-      case (Left(e1), Left(e2))   ⇒ Left(List(e1, e2))
-      case (Right(_), Left(e2))   ⇒ Left(List(e2))
-      case (Left(e1), Right(_))   ⇒ Left(List(e1))
       case (Right(a1), Right(b1)) ⇒ Right(f(a1, b1))
+      case _                      ⇒ Left(List(this, b).collect { case Left(error) ⇒ error })
     }
 }
 
